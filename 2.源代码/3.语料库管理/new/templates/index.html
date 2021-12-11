@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <body>
+    <label class="mgl-v">   ᠬᠡᠯᠡᠨ  ᠬᠦᠮᠦᠷᠭᠡ  ᠬᠠᠮᠢᠶᠠᠷᠤᠯᠲᠠ  ᠰᠢᠰᠲ᠋ᠧᠮ </label>
+    <label class="hanyu-v"></label>
+    </body>
+    <title>Title</title>
+    <style>
+        {# 蒙文标题 #}
+            .mgl-v {
+            {# width: 580px; #}
+                text-align: center;
+                font-size: 30px;
+                height: 8%;
+                color: #4e6ef2;
+                font-style: normal;
+                font-family: 'MenksoftQagan';
+                writing-mode: vertical-lr;
+                -webkit-text-orientation: sideways-right;
+    }
+            @font-face {
+    font-family:MenksoftQagan;
+    src:url("/static/fonts/MenkQagan_u.ttf");
+}
+            .hanyu-v {
+                float: left;
+                text-align: center;
+                width: 580px;
+                padding: 12px 16px;
+                margin: 0;
+                vertical-align: top;
+
+                outline: 0;
+                box-shadow: none;
+                border-radius: 10px 0 0 10px;
+                overflow: hidden;
+                box-sizing: content-box;
+                font-size: 30px;
+                color: #4e6ef2;
+        font-style: normal;
+    }
+        .mgl {
+            font-family: MenksoftQagan;
+            -webkit-writing-mode: vertical-lr;
+            -webkit-text-orientation: sideways-right;
+        }
+
+        .tig_m {
+            font-family: MenksoftQagan;
+            -webkit-writing-mode: vertical-lr;
+            -webkit-text-orientation: sideways-right;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        {# ul定义一个无序列表 #}
+        ul {
+            list-style: none;
+        }
+        {# 句子的id符号 #}
+        .l {
+            float: left;
+        }
+
+        {#  .r {
+            float: right;
+        }#}
+        {# kw显示搜索框 #}
+        #kw {
+            float: left;
+            width: 510px;
+            height: 16px;
+            padding: 12px 16px;
+            font-size: 16px;
+            margin: 0;
+            vertical-align: top;
+            outline: 0;
+            box-shadow: none;
+            border-radius: 10px 0 0 10px;
+            border: 2px solid #c4c7ce;
+            background: #fff;
+            color: #222;
+            overflow: hidden;
+            box-sizing: content-box;
+            font-family: MenksoftQagan;
+            -webkit-writing-mode: vertical-lr;
+            -webkit-text-orientation: sideways-right;
+        }
+        {# su表示“点击搜索”按钮 #}
+        #su{
+            float: left;
+            cursor: pointer;
+            width: 108px;
+            height: 44px;
+            line-height: 45px;
+            line-height: 44px \9;
+            padding: 0;
+            background: 0 0;
+            background-color: #4e6ef2;
+            border-radius: 0 10px 10px 0;
+            font-size: 17px;
+            color: #fff;
+            box-shadow: none;
+            font-weight: 400;
+            border: none;
+            outline: 0;
+        }
+        {# 为用户输入创建搜索框的表单html表单 #}
+        .form {
+            width: 654px;
+            height: 70px;
+            display: block;
+            margin: auto;
+            font-family: MenksoftQagan;
+
+        }
+        {# 内容布局 #}
+        .hhht {
+            width: 80%;
+            min-width: 960px;
+            margin: auto;
+        }
+
+        .mgl {
+            font-family: MenksoftQagan;
+
+        }
+        {# k关键词 #}
+        .k {
+            color: red;
+        }
+
+        ul {
+            width: 100%;
+        }
+        {# li每条语句 #}
+        li {
+            display: block;
+            width: 80%;
+            height: 430px;{#设置蒙古语竖着的长度 #}
+        }
+        {#显示出来的蒙古文内容 #}
+        .content {
+
+            display: none;
+            border-top: 1px solid blue;
+            padding: 50px 0;
+            writing-mode: vertical-lr;
+            -webkit-text-orientation: sideways-right;
+            font-family: MenksoftQagan;
+            font-size: 20px;
+        }
+        {# a表示显示分页 #}
+        a {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background-color: #c4c7ce;
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        img {
+            margin-top: 50px;
+        }
+        {# count统计关键词 #}
+        .count {
+            margin-top: -45px;
+            color: #4e6ef2;
+        }
+        {# user包含 登录、注册#}
+        .user {
+            width: 200px;
+            height: 40px;
+            position: relative;
+            float: right;
+        }
+        {# user_form包括 登录、注册两个按钮 #}
+        .user_form, .user_info {
+            float:right;
+        }
+        {# btn按钮的样式 #}
+        .btn {
+            float: left;
+            cursor: pointer;
+            width: 80px;
+            height:35px;
+            padding: 0;
+            background: 0 0;
+            background-color: #4e6ef2;
+            border-radius: 10px 10px 10px 10px;
+            font-size: 17px;
+            color: #fff;
+            font-weight: 400;
+            border: none;
+            outline: 0;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .user_info {
+            font-family: auto;
+            font-size: 18px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+
+        .li_btn {
+            width: 50px;
+            height:35px;
+            padding: 0;
+            background: 0 0;
+            background-color: #4e6ef2;
+            border-radius: 10px 10px 10px 10px;
+            font-size: 12px;
+            color: #fff;
+            font-weight: 400;
+            border: none;
+            outline: 0;
+            margin-right: 10px;
+        }
+        .fun_btn {
+            width: 40px;
+            color: #ffffff;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        {# “添加”按钮 #}
+        .modify {
+            background-color: #4e6ef2;
+        }
+        .del {
+            background-color: red;
+        }
+		.update {
+			background-color: #4e6ef2;
+			margin-top: 10px;
+			width:100px;
+			font-size:18px;
+		}
+		.update_txt {
+			width:200px;
+			height: 30px;
+			font-size:18px;
+			margin-top: 10px;
+		}
+		.h1 {
+			font-size:26px;
+        {#  fonts-style:bold;#}
+		}
+    </style>
+</head>
+
+<body background="..\static\images\bg.jpg">
+    <!-- 注册登录 -->
+    <div class="user">
+        {% if username %}
+        <div class="user_info" style="display:inline;">
+            <span class="username" id="user_name">{{ username }}</span>
+            <span class="username">&nbsp;,您好！</span>
+			
+        </div>
+		<div class="user_form" style="display:inline;">
+			<button class="btn" id="logout_btn" onclick="logout()">退出</button>
+		</div>
+        {% else %}
+        <div class="user_form">
+            <button class="btn" id="login_btn" onclick="login()">登录</button>
+            <button class="btn" id="reg_btn" onclick="login()">注册</button>
+			
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="hhht">
+        {# ../static/images/校徽.png #}
+          <img src="" alt="" width="100" >
+        <div class="form">
+            <input id="kw" name="wd" class="s_ipt" value="" maxlength="255" autocomplete="off" >
+            <input type="submit" id="su" value="点击搜索" class="bg s_btn">
+        </div>
+
+        <div class="content">
+            <span class="count r">
+			</span>
+            <ul>
+            </ul>
+        </div>
+		<div class="add_div" id="add_div" style="display:none;">
+			<span class="h1"> ᠦᠭᠦᠯᠡᠪᠦᠷᠢ  ᠨᠡᠮᠡᠬᠦ᠌:</span>{# 添加句子 #}
+			<form>
+				<input type="text" name="add_ctn" id="update_txt" class="update_txt" value=""><br>
+				<button type="button" class="fun_btn update" id="add_btn" onclick="add_txt()"> ᠨᠡᠮᠡᠬᠦ </button>{# 添加 #}
+			</form>
+		</div>
+    </div>
+    <script src="../static/js/jquery-3.5.1.min.js"></script>
+    <script>
+		
+        function login(){
+            window.location.href = '/login_html'
+        }
+        function modify(id) {
+            console.log('text-' + id)    {# 控制台输出各种字体样式 #}
+            var text = document.getElementById('text-' + id) {#获取对ID标签属性为指定值的第一个对象的引用。返回指定 ID 的元素 #}
+            text.style.display=""
+			document.getElementById('ctn-'+id).style.display="none";
+			document.getElementById('del_btn-'+id).style.display="none";
+			document.getElementById('modify_btn-'+id).style.display="none";
+			document.getElementById('ok_btn-'+id).style.display="";
+			document.getElementById('cancel_btn-'+id).style.display="";
+        }
+		function add(){
+			document.getElementById('add_div').style.display="";
+		}
+        {# 确认添加 #}
+		function add_txt(){
+			var ctn = $('#update_txt').val()
+			$.ajax({
+                url: '/add',
+                type: 'POST',
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify({ 'ctn': ctn }),
+                success: function (res) {
+					console.log(res.data)
+					alert(' ᠨᠡᠮᠡᠵᠦ᠍  ᠳᠡᠢᠯᠦᠭᠰᠡᠨ！')  {# 添加成功 #}
+					document.getElementById('add_div').style.display="none";
+					sub(1)
+				}
+			})
+			
+			return false;
+		}
+		 {# 确认修改 #}
+		function ok_modify(id){
+			var ctn = $('#text-'+id).val()
+			$.ajax({   {# 对网页的某部分进行更新，发送请求 #}
+                url: '/modify',
+                type: 'POST',
+                contentType: "application/json",  {# 告诉服务器请求类型的数据 #}
+                dataType: "json",
+                data: JSON.stringify({ 'id': id, 'ctn': ctn }),
+                success: function (res) {
+					console.log(res.data)
+					alert(' ᠵᠠᠰᠠᠵᠤ  ᠳᠡᠢᠯᠦᠭᠰᠡᠨ！') {# 修改成功 #}
+					sub(1)
+				}
+			})
+		}
+		 {# 取消修改 #}
+		function cancel_modify(id){
+			document.getElementById('ctn-'+id).style.display="";
+			document.getElementById('text-'+id).style.display="none";
+			document.getElementById('del_btn-'+id).style.display="";
+			document.getElementById('modify_btn-'+id).style.display="";
+			document.getElementById('ok_btn-'+id).style.display="none";
+			document.getElementById('cancel_btn-'+id).style.display="none";
+		}
+        {# 删除成功 #}
+		function del(id){
+			$.ajax({   {# 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新，发送请求 #}
+                url: '/delete',
+                type: 'POST',
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify({ 'id': id}),
+                success: function (res) {
+					console.log(res.msg) {# 控制台输出各种字体样式 #}
+					alert(' ᠬᠠᠰᠤᠵᠤ  ᠳᠡᠢᠯᠦᠭᠰᠡᠨ！') {# 删除成功 #}
+					sub(1)
+				}
+			})
+		}
+        function logout(){
+            $.ajax({
+                url: '/logout',
+                type: 'POST',
+                success: function (res) {
+                    $(location).attr('href', '/');
+                }
+            })
+        }
+    </script>
+    <script>
+        function sub(page) {
+            console.log(111)  {# 输出信息 #}
+            user_name = document.getElementById('user_name')
+            user = 0
+            // 当前有用户登录
+            if(user_name != null) user = 1
+            let kw = $('#kw').val();{# Jquery的语法，获取id为kw 的input标签的值 #}
+            console.log('kw:'+kw) {# 输出kw #}
+            $.ajax({     {# ajax() 方法通过 HTTP 请求加载远程数据。 #}
+                url: '/get_data',
+                type: 'POST',
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify({ 'kw': kw, 'page': page }),
+                success: function (res) {
+                    let ul = $('ul');{# 获取整个ul查询出来的全部内容 #}
+                    ul.empty();   {# empty() 方法仅仅是删除后代元素，并不会删除自身元 #}
+
+                    res['data'].forEach(function (v, i) {
+                        let li = $('<li></li>');
+                        
+                        let span = `<div class="r"><form><span id="ctn-${v.id}" style="margin-right: 10px;">`
+                        
+                        let txt = v.ctn.split(kw);
+                        let str = ''
+                        for (let z = 0; z < txt.length - 1; z++) {
+                            span += txt[z] + '<span class="k">'  + kw.trim() + '</span>'
+                             str += kw.trim() {# 去除kw的头尾空格 #}
+                        }
+                        
+                        if(user == 1){
+                            str += txt[txt.length - 1].trim() 
+                            span += txt[txt.length - 1].trim()
+							+ '</span>'
+                            + `<input name="text_id" id="id-${v.id}"type="text" style="display: none;" value="${v.id}">`
+                            + `<input name="text_ctn" id="text-${v.id}" type="text" style="display: none;" value="${str}">`
+                            + `<button class="fun_btn modify" id="modify_btn-${v.id}" type="button" onclick="modify(${v.id})"> ᠵᠠᠰᠠᠬᠤ</button>`
+                            + `<button class="fun_btn del" id="del_btn-${v.id}" type="button" onclick="del(${v.id})"> ᠬᠠᠰᠤᠬᠤ</button>`
+                            + `<button class="fun_btn modify" type="button" style="display:none;" id="ok_btn-${v.id}" onclick="ok_modify(${v.id})">确认</button>`
+                            + `<button class="fun_btn modify" type="button" style="display:none;" id="cancel_btn-${v.id}" onclick="cancel_modify(${v.id})">取消</button>`
+                            + '</form></div>'
+                        } else {
+                            span += txt[txt.length - 1].trim() + '</span>'
+                        }
+                        //console.log(span)
+                        li.html(`<span class="l">${i + 1}</span>${span}`);
+                        ul.append(li);
+                        $('img').hide()
+                        var from = $('.form');
+                        from.css({ 'margin': 0, 'margin-top': 20 });
+                        $('.content').show();{# 获取文本内容content #}
+                        $('.count').text('ᠨᠡᠢᠲᠡ' + res['count'] + ' ᠵᠣᠷᠪᠤᠰ');{# 获取共几条数据文本text #}
+						if(user == 1){
+							$('.count').append('<button class="fun_btn modify" type="button" id="add" onclick="add()">ᠨᠡᠮᠡᠬᠦ᠌</button>')
+						}
+                    })
+                    let page = parseInt(res['count'] / 20) + 1;
+                    let div = $('<div class="page"></div>');
+                    $('.page').empty();
+                    for (let z = 0; z < page; z++) {
+                        let a = $(`<a>${z + 1}</a>`)
+                        div.append(a)
+                    }
+                    $('.content').append(div);
+                }
+            })
+        }
+
+        window.onload = function () {
+            console.log(111)
+            let su = $('#su');
+            let kw = $('#kw')
+            su.click(function () {
+                sub(1);
+            })
+            kw.keydown(function (e) {
+                if (e.keyCode === 13) {
+                    sub(1)
+                }
+            })
+            $('.content').on('click', 'a', function () {
+                let pageNum = $(this).text()
+                sub(pageNum)
+            })
+        }
+    </script>
+   {#  <a href="http://www.qinggis.net/" target="_top">成</a>#}
+    {#  <div id="footer" style="background-color:#ffffff;clear:both;text-align:center;">
+版权 @ naheya.com</div>#}
+    </div>
+</body>
+
+</html>

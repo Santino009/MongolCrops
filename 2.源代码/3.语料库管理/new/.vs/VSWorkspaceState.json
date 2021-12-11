@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.idea",
+    "\\static",
+    "\\static\\js",
+    "\\templates",
+    "\\__pycache__"
+  ],
+  "SelectedNode": "\\templates\\index.html",
+  "PreviewInSolutionExplorer": false
+}
